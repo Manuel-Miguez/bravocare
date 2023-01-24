@@ -1,0 +1,22 @@
+.btn-submit {
+  top: 20%;
+  background-color: var(--colour-body-lg-background);
+  border: 2px solid var(--colour-text);
+  border-radius: 2px;
+  box-shadow: var(--colour-body-background) 4px 4px 0 0;
+  color: var(--colour-text);
+  cursor: pointer;
+  font-size: calc(var(--base-grid) * 3);
+  line-height: 1.525;
+  font-weight: 900;
+  padding: 0 18px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn-submit:hover {
+  background-color: var(--colour-body-background);
+}

@@ -1,0 +1,60 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "author": "Manuel Miguez",
+  "description": "Backend for Bravo Care Technical Skills Assessment",
+  "main": "index.js",
+  "license": "ISC",
+  "engines": {
+    "npm": ">=8.0.0 <9.0.0",
+    "node": ">=16.0.0 <17.0.0"
+  },
+  "scripts": {
+    "start": "node build/src/index.js",
+    "clean": "rimraf coverage build tmp",
+    "prebuild": "npm run lint && npm run prettier",
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"node ./build/src/index.js\"",
+    "lint": "eslint . --ext .ts --ext .mts",
+    "lint:fix": "eslint --fix .",
+    "test": "jest --coverage --detectOpenHandles",
+    "prettier": "prettier --config .prettierrc --write .",
+    "test:watch": "jest --watch",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "sync": "ts-node --transpile-only ./node_modules/typeorm/cli.js schema:sync -d src/config/database/orm.config.ts",
+    "migrate:run": "ts-node --transpile-only ./node_modules/typeorm/cli.js migration:run -d src/config/database/orm.config.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "date-fns": "^2.29.3",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.7.0",
+    "helmet": "^6.0.1",
+    "http-status-codes": "^2.2.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.8.0",
+    "typeorm": "^0.3.11"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.15",
+    "@types/jest": "^29.2.6",
+    "@types/morgan": "^1.9.4",
+    "@types/node": "^18.11.18",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
+    "@typescript-eslint/parser": "^5.48.2",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jest": "^27.2.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^29.3.1",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
+    "tsc-watch": "^6.0.0",
+    "typescript": "^4.9.4"
+  }
+}

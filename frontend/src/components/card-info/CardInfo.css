@@ -1,0 +1,21 @@
+.card_title {
+  font-size: calc(var(--base-grid) * 4);
+  line-height: 1.125;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.card_subtitle {
+  font-size: calc(var(--base-grid) * 3);
+  line-height: 1.125;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.card_footer {
+  margin-top: auto;
+  font-size: calc(var(--base-grid) * 2);
+  line-height: calc(var(--base-grid) * 2);
+  display: flex;
+  justify-content: space-between;
+}
